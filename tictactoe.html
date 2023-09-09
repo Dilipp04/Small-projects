@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tictactoe.css">
+    <title>Document</title>
+    <style>
+    
+.box{
+    font-size: 40px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(197, 197, 245);
+}
+.board{
+    display:block;
+    width: 255px;
+    margin: auto;
+}
+body{
+    height: 100vh;
+}
+#msg{
+    font-size: 50px;
+    font-weight: 900;
+    font-family:cursive;
+    width: 290px;
+    margin: auto;
+}
+body{
+    background:linear-gradient(270deg,blue,rgb(77, 77, 212),rgb(187, 187, 236));
+}
+    </style>
+</head>
+
+<body>
+<div class="board">
+    <table border="1px" cellspacing="0">
+        <tbody>
+            <tr>
+                <td><div class="box" onclick="myfunc(0)"></div></td>
+                <td><div class="box" onclick="myfunc(1)"></div></td>
+                <td><div class="box" onclick="myfunc(2)"></div></td>
+            </tr>
+            <tr>
+                <td><div class="box" onclick="myfunc(3)"></div></td>
+                <td><div class="box" onclick="myfunc(4)"></div></td>
+                <td><div class="box" onclick="myfunc(5)"></div></td>
+            </tr>
+            <tr>
+                <td><div class="box" onclick="myfunc(6)"></div></td>
+                <td><div class="box" onclick="myfunc(7)"></div></td>
+                <td><div class="box" onclick="myfunc(8)"></div></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="msg"></div>
+    <script>
+        let i = 0;
+let msg = document.getElementById('msg');
+let arr = document.getElementsByClassName('box');
+function draw(){
+    for(let i=0;i<9;i++){
+        if(arr[i].innerHTML==""){
+            return ;
+        }
+    }
+    msg.innerHTML = "Game Draw";
+}
+function check() {
+    if (arr[0].innerHTML !== "" && arr[0].innerHTML == arr[1].innerHTML && arr[1].innerHTML == arr[2].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[3].innerHTML !== "" && arr[3].innerHTML == arr[4].innerHTML && arr[4].innerHTML == arr[5].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[6].innerHTML !== "" && arr[6].innerHTML == arr[7].innerHTML && arr[7].innerHTML == arr[8].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[0].innerHTML !== "" && arr[0].innerHTML == arr[3].innerHTML && arr[3].innerHTML == arr[6].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[1].innerHTML !== "" && arr[1].innerHTML == arr[4].innerHTML && arr[4].innerHTML == arr[7].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[2].innerHTML !== "" && arr[2].innerHTML == arr[5].innerHTML && arr[5].innerHTML == arr[8].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[0].innerHTML !== "" && arr[0].innerHTML == arr[4].innerHTML && arr[4].innerHTML == arr[8].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    else if (arr[2].innerHTML !== "" && arr[2].innerHTML == arr[4].innerHTML && arr[4].innerHTML == arr[6].innerHTML) {
+        msg.innerHTML = "You are win";
+    }
+    draw();
+}
+function myfunc(n) {
+    turn = i % 2 == 0 ? 'X' : 'O';
+    let a = document.getElementsByClassName('box')[n];
+    if (a.innerHTML == "") {
+        a.innerHTML = turn;
+        i++;
+        check();
+    }
+}
+    </script>
+</body>
+
+</html>

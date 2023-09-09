@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clock</title>
+  <link rel="stylesheet" href="clock.css">
+  <style>
+    #container{
+    background:url('clock.png') no-repeat;
+    height: 40vw;
+    width: 40vw;
+    background-size: 100%;
+    margin: auto;
+    position: relative;
+}
+.hands{
+    background-color: black;
+    position: absolute;
+    border-radius: 10px;
+    width:1.5%;
+    transform-origin: bottom ;
+}
+#hour{
+    height: 20%;
+    top: 28.3%;
+    left: 48.9%;
+}
+#minute{
+    height: 25%;
+    left: 48.9%;
+    top: 23%;
+}
+
+#second{
+    height: 30%;
+    left: 48.9%;
+    top: 18.5%;   
+} 
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="hands" id="hour"></div>
+    <div class="hands" id="minute"></div>
+    <div class="hands" id="second"></div>
+  </div>
+
+
+  <script>
+    setInterval(() => {
+      let d = new Date();
+      let h = d.getHours();
+      let m = d.getMinutes();
+      let s = d.getSeconds();
+      let rhour = (30 * h + m / 2);
+      let rminute = 6 * m;
+      let rsecond = 6 * s;
+      hour.style.transform = `rotate(${rhour}deg)`;
+      minute.style.transform = `rotate(${rminute}deg)`;
+      second.style.transform = `rotate(${rsecond}deg)`;
+    }, 1000);
+  </script>
+
+
+</body>
+
+</html>
