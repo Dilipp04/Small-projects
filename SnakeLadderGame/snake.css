@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+.title {
+    padding: 10px;
+}
+
+.board {
+    background-image: url(board.jpg);
+    background-size: 520px;
+    margin: auto;
+    border: 2px solid black;
+    height: 520px;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+
+    border: 1px solid red;
+    height: 50px;
+    width: 50px;
+    font-size: large;
+}
+
+#dicecont{
+    display: inline;
+}
+#p1,#p2{
+    width: 30%;
+    height: 30%;
+    border-radius: 100px;
+    border: 2px solid black;
+    transition: linear all 0.5s;
+    position: relative;
+}
+#p1{
+    background-color: red;
+    top: 0px;
+    left: -50px;
+}
+#p2{
+    background-color: yellow;
+    top: 0px;
+    left: -50px;
+}
