@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     text-align: center;
-
 }
 
 .title {
-    padding: 10px;
+    font-family: cursive;
+    font-weight: bolder;
+
 }
 
 .board {
@@ -25,31 +26,40 @@
 }
 
 .box {
-
-    border: 1px solid red;
-    height: 50px;
-    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    width: 52px;
     font-size: large;
 }
 
-#dicecont{
+#dicecont {
     display: inline;
 }
-#p1,#p2{
-    width: 30%;
-    height: 30%;
+#dicecont button{
+    width: 80px;
+    height: 40px;
+    border-radius: 100px;
+}
+#dicecont p{
+    font-size: 20px;
+    font-family: cursive;
+
+}
+#p1,
+#p2 {
+    width: 40%;
+    height: 40%;
     border-radius: 100px;
     border: 2px solid black;
-    transition: linear all 0.5s;
     position: relative;
 }
-#p1{
+
+#p1 {
     background-color: red;
-    top: 0px;
-    left: -50px;
 }
-#p2{
+
+#p2 {
     background-color: yellow;
-    top: 0px;
-    left: -50px;
 }
